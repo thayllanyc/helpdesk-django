@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Chamado #{{ chamado.id }}</title>
+</head>
+<body>
+    <a href="{% url 'detalhe_chamado' chamado.id %}">&larr; Voltar para o chamado</a>
+
+    <h1>Gerenciar #{{ chamado.id }} - {{ chamado.titulo }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Chamado</title>
+</head>
+<body>
+    <a href="{% url 'lista_chamados' %}">&larr; Voltar para a lista</a>
+
+    <h1>Abrir novo chamado</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamados</title>
+</head>
+<body>
+    <h1>Lista de Chamados</h1>
+
+    <p><a href="{% url 'criar_chamado' %}">+ Novo chamado</a></p>
+
+    <form method="get">
+        <label>Status:
+            <select name="status">
+                <option value="">Todos</option>
+                <option value="ABERTO">Aberto</option>
+                <option value="EM_ANDAMENTO">Em andamento</option>
+                <option value="RESOLVIDO">Resolvido</option>
+                <option value="FECHADO">Fechado</option>
+            </select>
+        </label>
+
+        <label>Buscar:
+            <input type="text" name="busca">
+        </label>
+
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <ul>
+        {% for chamado in chamados %}
+        <li>
+            <a href="{% url 'detalhe_chamado' chamado.id %}">
+                #{{ chamado.id }} - {{ chamado.titulo }}
+            </a>
+            (Status: {{ chamado.status }})
+        </li>
+        {% empty %}
+            <li>Nenhum chamado encontrado.</li>
+        {% endfor %}
+    </ul>
+ <div>
+        {% if chamados.has_previous %}
+            <a href="?page={{ chamados.previous_page_number }}">&laquo; Anterior</a>
+        {% endif %}
+
+        <span>Página {{ chamados.number }} de {{ chamados.paginator.num_pages }}</span>
+
+        {% if chamados.has_next %}
+            <a href="?page={{ chamados.next_page_number }}">Próxima &raquo;</a>
+        {% endif %}
+    </div>
+</body>
+</html> 

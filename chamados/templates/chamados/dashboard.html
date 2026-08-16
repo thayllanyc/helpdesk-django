@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <a href="{% url 'lista_chamados' %}">Ver lista de chamados</a>
+
+    <h1>Dashboard</h1>
+
+    <ul>
+        <li>Abertos: {{ contagem.ABERTO }}</li>
+        <li>Em andamento: {{ contagem.EM_ANDAMENTO }}</li>
+        <li>Resolvidos: {{ contagem.RESOLVIDO }}</li>
+        <li>Fechados: {{ contagem.FECHADO }}</li>
+    </ul>
+</body>
+</html>
