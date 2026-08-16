@@ -2,15 +2,131 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Helpdesk</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #020303;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .login-card {
+            display: flex;
+            width: 800px;
+            max-width: 90%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(244, 217, 149, 0.15);
+        }
+
+        .login-form {
+            flex: 1;
+            background-color: #4A575D;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-form h2 {
+            color: #F4D995;
+            margin-bottom: 30px;
+        }
+
+        .login-form label {
+            color: #F4D995;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #566574;
+            color: white;
+        }
+
+        .login-form input:focus {
+            outline: 2px solid #F4D995;
+        }
+
+        .login-form button {
+            background-color: #F4D995;
+            color: #020303;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #F4D995;
+            color: white;
+        }
+
+        .login-side {
+            flex: 1;
+            background: linear-gradient(135deg, #E07451, #020303);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .login-side h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #F4D995;
+        }
+
+        .errorlist {
+            color: #E07451;
+            list-style: none;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Login</h1>
+    <div class="login-card">
+        <div class="login-form">
+            <h2>Login</h2>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Entrar</button>
-    </form>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+                <label for="id_username">Usuário</label>
+                {{ form.username }}
+
+                <label for="id_password">Senha</label>
+                {{ form.password }}
+
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+
+        <div class="login-side">
+            <h1>Helpdesk</h1>
+            <p>Bem-vindo(a) de volta. Acompanhe seus chamados em um só lugar.</p>
+        </div>
+    </div>
 </body>
 </html>

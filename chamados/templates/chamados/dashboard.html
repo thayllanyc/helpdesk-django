@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
-<body>
-    <a href="{% url 'lista_chamados' %}">Ver lista de chamados</a>
+{% extends "chamados/base.html" %}
 
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
     <h1>Dashboard</h1>
 
     <ul>
@@ -15,5 +11,4 @@
         <li>Resolvidos: {{ contagem.RESOLVIDO }}</li>
         <li>Fechados: {{ contagem.FECHADO }}</li>
     </ul>
-</body>
-</html>
+{% endblock %}

@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Gerenciar Chamado #{{ chamado.id }}</title>
-</head>
-<body>
-    <a href="{% url 'detalhe_chamado' chamado.id %}">&larr; Voltar para o chamado</a>
+{% extends "chamados/base.html" %}
 
+{% block title %}Gerenciar Chamado #{{ chamado.id }}{% endblock %}
+
+{% block content %}
     <h1>Gerenciar #{{ chamado.id }} - {{ chamado.titulo }}</h1>
 
     <form method="post">
@@ -14,5 +10,4 @@
         {{ form.as_p }}
         <button type="submit">Salvar</button>
     </form>
-</body>
-</html>
+{% endblock %}

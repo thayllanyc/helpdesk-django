@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Chamado #{{ chamado.id }}</title>
-</head>
-<body>
-    <a href="{% url 'lista_chamados' %}">&larr; Voltar para a lista</a>
+{% extends "chamados/base.html" %}
 
+{% block title %}Chamado #{{ chamado.id }}{% endblock %}
+
+{% block content %}
     <h1>#{{ chamado.id }} - {{ chamado.titulo }}</h1>
 
     <p><strong>Status:</strong> {{ chamado.status }}</p>
@@ -37,5 +33,4 @@
         {{ form_comentario.as_p }}
         <button type="submit">Comentar</button>
     </form>
-</body>
-</html> 
+{% endblock %}

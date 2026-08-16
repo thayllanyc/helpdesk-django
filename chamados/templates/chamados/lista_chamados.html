@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Chamados</title>
-</head>
-<body>
+{% extends "chamados/base.html" %}
+
+{% block title %}Chamados{% endblock %}
+
+{% block content %}
     <h1>Lista de Chamados</h1>
 
     <p><a href="{% url 'criar_chamado' %}">+ Novo chamado</a></p>
@@ -39,7 +37,8 @@
             <li>Nenhum chamado encontrado.</li>
         {% endfor %}
     </ul>
- <div>
+
+    <div>
         {% if chamados.has_previous %}
             <a href="?page={{ chamados.previous_page_number }}">&laquo; Anterior</a>
         {% endif %}
@@ -50,5 +49,4 @@
             <a href="?page={{ chamados.next_page_number }}">Próxima &raquo;</a>
         {% endif %}
     </div>
-</body>
-</html> 
+{% endblock %}
