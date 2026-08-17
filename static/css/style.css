@@ -1,0 +1,87 @@
+/* Estilos customizados do Helpdesk */
+:root {
+    --preto: #020303;
+    --vermelho: #E07451;
+    --amarelo: #F4D995;
+    --cinza: #4A575D;
+    --cinza-claro: #566574;
+}
+
+body {
+    background-color: #f5f1e8;
+    color: var(--preto);
+}
+
+.navbar {
+    background-color: var(--preto) !important;
+}
+
+.navbar-brand {
+    color: var(--amarelo) !important;
+    font-weight: bold;
+}
+
+.navbar .btn-outline-light {
+    border-color: var(--amarelo);
+    color: var(--amarelo);
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: var(--amarelo);
+    color: var(--preto);
+}
+
+.btn-primary {
+    background-color: var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+.btn-primary:hover {
+    background-color: var(--preto);
+    border-color: var(--preto);
+}
+
+h1 {
+    color: var(--preto);
+    border-bottom: 3px solid var(--amarelo);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(2, 3, 3, 0.15);
+}
+
+.card-header {
+    background-color: var(--preto);
+    color: var(--amarelo);
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.badge-aberto { background-color: var(--vermelho); }
+.badge-andamento { background-color: var(--cinza-claro); }
+.badge-resolvido { background-color: var(--amarelo); color: var(--preto); }
+.badge-fechado { background-color: var(--preto); }
+
+.dashboard-card {
+    background-color: var(--preto);
+    color: var(--amarelo);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.dashboard-card .numero {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+a {
+    color: var(--vermelho);
+}
+
+a:hover {
+    color: var(--preto);
+}

@@ -5,10 +5,30 @@
 {% block content %}
     <h1>Dashboard</h1>
 
-    <ul>
-        <li>Abertos: {{ contagem.ABERTO }}</li>
-        <li>Em andamento: {{ contagem.EM_ANDAMENTO }}</li>
-        <li>Resolvidos: {{ contagem.RESOLVIDO }}</li>
-        <li>Fechados: {{ contagem.FECHADO }}</li>
-    </ul>
+    <div class="row g-3">
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="numero">{{ contagem.ABERTO }}</div>
+                <div>Abertos</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="numero">{{ contagem.EM_ANDAMENTO }}</div>
+                <div>Em andamento</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="numero">{{ contagem.RESOLVIDO }}</div>
+                <div>Resolvidos</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dashboard-card">
+                <div class="numero">{{ contagem.FECHADO }}</div>
+                <div>Fechados</div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
