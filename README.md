@@ -1,12 +1,12 @@
 # Sistema de Chamados (Helpdesk)
 
-Sistema de gerenciamento de chamados de suporte, desenvolvido em Django, com controle de acesso baseado em papéis (Cliente, Agente e Administrador).
+Sistema de gerenciamento de chamados de suporte, desenvolvido em Django, com controle de acesso baseado em papéis (Cliente, Agente e Administrador) e identidade visual própria inspirada no Umbreon Shiny.
 
 Projeto desenvolvido como parte do meu aprendizado prático em desenvolvimento web com Python/Django.
 
 ## Funcionalidades
 
-- Autenticação de usuários com tela de login própria
+- Autenticação de usuários com tela de login própria e estilizada
 - Três papéis de usuário com permissões diferentes:
   - **Cliente**: abre chamados e acompanha o andamento dos próprios chamados
   - **Agente**: visualiza e gerencia os chamados atribuídos a ele
@@ -18,14 +18,16 @@ Projeto desenvolvido como parte do meu aprendizado prático em desenvolvimento w
 - Filtros por status e busca por título
 - Paginação da listagem de chamados
 - Dashboard com contagem de chamados por status
+- Interface estilizada com Bootstrap 5 e paleta de cores customizada
 - Testes automatizados cobrindo as regras de permissão
 
 ## Tecnologias utilizadas
 
-- Python
-- Django
+- Python / Django
 - SQLite (banco de dados de desenvolvimento)
-- HTML + Django Template Language
+- Bootstrap 5
+- CSS customizado
+- Django Template Language
 
 ## Como rodar o projeto localmente
 
@@ -73,7 +75,8 @@ python manage.py test chamados
 
 - `core/` — configurações do projeto Django
 - `contas/` — app responsável pela autenticação e modelo de usuário customizado
-- `chamados/` — app principal, com os modelos de Categoria, Chamado e Comentário, e toda a lógica de permissões
+- `chamados/` — app principal, com os modelos de Categoria, Chamado e Comentário, views, formulários e templates
+- `static/css/` — estilos customizados aplicados sobre o Bootstrap
 
 ## Autora
 
